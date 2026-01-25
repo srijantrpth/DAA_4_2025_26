@@ -81,6 +81,30 @@ string decode(Node* root, string encodedStr) {
 
 
 int main() {
-    
+    string text;
+    cout << "Enter text to encode: ";
+    getline(cin, text);
+
+    if (text.empty()) {
+        cout << "Empty input!" << endl;
+        return 1;
+    }
+
+    Node* root = buildTree(text);
+
+    unordered_map<char, string> codes;
+    generateCodes(root, "", codes);
+
+    cout << "\nHuffman Codes:\n";
+    for (auto& pair : codes) {
+        cout << "'" << pair.first << "' : " << pair.second << endl;
+    }
+
+    string encoded = encode(text, codes);
+    cout << "\nEncoded string: " << encoded << endl;
+
+    string decoded = decode(root, encoded);
+    cout << "Decoded string: " << decoded << endl;
+
     return 0;
 }
