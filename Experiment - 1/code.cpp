@@ -43,7 +43,7 @@ long long complexRec(int n) {
 }
 
 int main() {
-    cout << "Complexity Analysis of complexRec: " << endl;
+    cout << "=== Complexity Analysis of complexRec ===" << endl;
     cout << endl;
     
     vector<int> testSizes = {8, 16, 32, 64, 128, 256, 512, 1024};
@@ -70,10 +70,10 @@ int main() {
     }
     
     cout << endl;
-    cout << "Recurrence Relation: " << endl;
+    cout << "=== Recurrence Relation ===" << endl;
     cout << "T(n) = 3T(n/2) + O(n·log n)" << endl;
     cout << endl;
-    cout << "Master's Theorem Solution: " << endl;
+    cout << "=== Master's Theorem Solution ===" << endl;
     cout << "a = 3, b = 2, f(n) = n·log(n)" << endl;
     cout << "log_b(a) = log_2(3) = " << log2(3) << endl;
     cout << "Case 1 applies: f(n) = O(n^(log_2(3) - epsilon))" << endl;
